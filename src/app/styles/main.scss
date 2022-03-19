@@ -84,7 +84,7 @@ h4 {
   border-radius: 2px;
 
   @media (max-width: $md3) {
-      padding: 12px;
+    padding: 12px;
   }
 }
 
@@ -92,4 +92,17 @@ h4 {
   max-width: $maxWidth;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.full {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
