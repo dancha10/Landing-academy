@@ -1,0 +1,33 @@
+@import "src/app/styles/variables";
+
+.input {
+  min-width: 192px;
+  height: 52px;
+  border: 1px solid $lightGrey;
+  border-radius: 2px;
+  padding: 15px 12px;
+  color: $dark;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.57em;
+
+  &::placeholder {
+    font-family: $fontFamilyGilroy;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57em;
+    color: $grey;
+  }
+
+  &--active {
+    border: 1px solid $purple;
+  }
+
+  &:disabled {
+    background: #FFFFFF;
+
+    &::placeholder {
+      color: $lightGrey;
+    }
+  }
+}
