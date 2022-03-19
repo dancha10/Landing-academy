@@ -1,0 +1,1 @@
+export { SliderReviews } from './ui'

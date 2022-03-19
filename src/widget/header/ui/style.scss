@@ -1,0 +1,49 @@
+@import "src/app/styles/variables";
+
+.header {
+  height: 116px;
+  background: #FFFFFF;
+
+  // .header__container
+  &__container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+
+    @media (max-width: $md3) {
+      & button {
+        padding: 9px 11px;
+
+        svg {
+          margin-right: 0;
+        }
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    h4 {
+      font-family: $fontFamilyGilroy;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1em;
+    }
+
+  }
+
+  // .header__logo
+  &__logo {
+    @media (max-width: $md4) {
+      svg {
+        width: 59px;
+        height: 36px;
+      }
+    }
+  }
+}

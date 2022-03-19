@@ -1,0 +1,29 @@
+@import "src/app/styles/variables";
+
+.user-comment {
+  width: 520px;
+  padding: 24px;
+  background: $lightGrey;
+  border-radius: 2px;
+
+  // .user-comment__header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .user-comment__year
+  &__year {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $grey;
+  }
+
+  // .user-comment__review
+  &__review {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57em;
+  }
+}

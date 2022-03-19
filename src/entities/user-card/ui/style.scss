@@ -1,0 +1,81 @@
+@import "src/app/styles/variables";
+
+.user-card {
+  max-width: 850px;
+  min-height: 383px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  padding: 40px;
+
+  // .user-card__header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .user-card__fullName
+  &__fullName {
+    color: $purple;
+  }
+
+  // .user-card__year-birth
+  &__year-birth {
+    font-size: 18px;
+    line-height: 1.3em;
+    font-weight: 400;
+    color: $grey;
+  }
+
+  // .user-card__info
+  &__info {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+
+    & li {
+      display: flex;
+      align-items: center;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.3em;
+
+      & svg {
+        margin-left: 12px;
+      }
+
+      &:not(:first-child) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  // .user-card__tag
+  &__tag {
+    font-weight: 700;
+    margin-right: 5px;
+  }
+
+  // .user-card__description
+  &__description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3em;
+    margin-top: 18px;
+  }
+
+  // .user-card__pet
+  &__pet {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    & svg {
+      margin-right: 12px;
+    }
+  }
+}
