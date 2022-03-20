@@ -6,9 +6,10 @@ import './style.scss'
 interface ITextarea {
 	placeholder: string
 	maxLength: number
+	validator?: Object
 }
 
-export const Textarea: FC<ITextarea> = ({ placeholder, maxLength }) => {
+export const Textarea: FC<ITextarea> = ({ placeholder, maxLength, validator }) => {
 	const [isActive, setActive] = useState(false)
 	const [currentLength, setCurrentLength] = useState<number>(0)
 
@@ -22,10 +23,12 @@ export const Textarea: FC<ITextarea> = ({ placeholder, maxLength }) => {
 	return (
 		<div className={classList('textarea', { 'textarea--active': isActive })}>
 			<textarea
+				{...validator}
 				placeholder={placeholder}
 				onChange={e => changeValue(e.target.value)}
 				maxLength={maxLength}
 			/>
+
 			<p className='textarea__counter'>
 				{currentLength}/{maxLength}
 			</p>

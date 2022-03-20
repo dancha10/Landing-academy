@@ -14,12 +14,12 @@ export const Input: FC<IInput> = ({ placeholder, disabled, validator }) => {
 	const changedActive = (value: string) => (value ? setActive(true) : setActive(false))
 	return (
 		<input
+			{...validator}
 			type='text'
 			placeholder={placeholder}
 			className={classNames('input', { 'input--active': isActive })}
 			onChange={event => changedActive(event.target.value)}
 			disabled={disabled}
-			{...validator}
 		/>
 	)
 }

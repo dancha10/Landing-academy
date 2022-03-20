@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useGate } from 'effector-react'
 
+import { ReviewModel } from 'widget/review-modal'
 import { Header } from 'widget/header'
 import { UserPreview } from 'widget/user-preview'
 import { Footer } from 'widget/footer'
@@ -19,6 +20,7 @@ const MainPage: FC = () => {
 				<div className='main-page__user-preview'>
 					<UserPreview />
 				</div>
+				<ReviewModel />
 				<div className='main-page__reviews'>
 					<SliderReviews />
 				</div>

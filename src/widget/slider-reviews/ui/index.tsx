@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { ToggleModel } from 'features/toggle-modal'
 import { Button } from 'shared/ui/buttons'
 import { UserComment } from 'shared/ui/user-comment'
 import { SliderDot } from 'shared/ui/slider-dot'
@@ -11,7 +12,7 @@ export const SliderReviews: FC = () => {
 		<div className='slider-review'>
 			<div className='slider-review__header'>
 				<h2>Отзывы</h2>
-				<Button.Dark onClickHandler={() => {}} addition>
+				<Button.Dark onClickHandler={() => ToggleModel.clickedButton()} addition>
 					Добавить отзыв
 				</Button.Dark>
 			</div>
