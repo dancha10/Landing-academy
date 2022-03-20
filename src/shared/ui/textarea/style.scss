@@ -4,6 +4,7 @@
   position: relative;
   min-width: 192px;
   border: 1px solid $lightGrey;
+  transition: $transition;
 
   &--active {
     border: 1px solid $purple;

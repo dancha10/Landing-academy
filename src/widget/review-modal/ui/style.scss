@@ -59,6 +59,22 @@
     }
   }
 
+  &__file-preview {
+    margin-top: 12px;
+  }
+
+  &__delete {
+    background: none;
+    @media (any-hover: hover) {
+      &:hover {
+        & svg path {
+          transition: $transition;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   // .review-model__textarea
   &__textarea {
     position: relative;
