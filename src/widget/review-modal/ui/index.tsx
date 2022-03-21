@@ -2,11 +2,11 @@ import { FC } from 'react'
 import { useStore } from 'effector-react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { SendingReview, SendingReviewModel } from 'features/sending-review'
 import { UploadFile, UploadFileModel } from 'features/upload-file'
 import { ToggleModal, ToggleModel } from 'features/toggle-modal'
 import { Modal } from 'shared/ui/modal'
 import { Input } from 'shared/ui/input'
-import { Button } from 'shared/ui/buttons'
 import { Textarea } from 'shared/ui/textarea'
 import { FilePreview } from 'shared/ui/file-preview'
 
@@ -24,17 +24,28 @@ interface IReviewModalInputs {
 
 export const ReviewModel: FC = () => {
 	const isOpen = useStore(ToggleModel.$isOpen)
+	const uploadedImage = useStore(UploadFileModel.$uploadImage)
+	const fileName = useStore(UploadFileModel.$fileName)
+	const errorMessage = useStore(UploadFileModel.$errorMessage)
+	const percentLoading = useStore(UploadFileModel.$percentLoading)
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm<IReviewModalInputs>()
 
-	const onSubmit: SubmitHandler<IReviewModalInputs> = data => console.log(data)
-
-	const fileName = useStore(UploadFileModel.$fileName)
-	const errorMessage = useStore(UploadFileModel.$errorMessage)
-	const percentLoading = useStore(UploadFileModel.$percentLoading)
+	const onSubmit: SubmitHandler<IReviewModalInputs> = data => {
+		SendingReviewModel.sentReview({
+			avatar: uploadedImage,
+			fullName: data.fullName,
+			review: data.detailedReview,
+			dateOfPost: SendingReviewModel.localeDateString(),
+		})
+		ToggleModel.clickedButton()
+		reset()
+	}
 
 	return (
 		<Modal isOpen={isOpen} toggleOpen={ToggleModel.clickedButton}>
@@ -91,9 +102,7 @@ export const ReviewModel: FC = () => {
 						)}
 					</div>
 					<div className='review-model__submit'>
-						<Button.Dark type='submit' onClickHandler={() => {}}>
-							Отправить отзыв
-						</Button.Dark>
+						<SendingReview />
 						<div className='review-model__information'>
 							<Information />
 							<span>Все отзывы проходят модерацию в течение 2 часов</span>

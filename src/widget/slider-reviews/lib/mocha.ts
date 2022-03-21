@@ -1,13 +1,8 @@
+import { Types } from 'shared/lib'
+
 import buba from './buba.jpg'
 
-export interface IUserReview {
-	fullName: string
-	dateOfPost: string
-	review: string
-	avatar?: string
-}
-
-export const userReviews: Array<IUserReview> = [
+export const userReviews: Array<Types.IUserReview> = [
 	{
 		avatar: buba,
 		fullName: 'Буба Бубенцов',

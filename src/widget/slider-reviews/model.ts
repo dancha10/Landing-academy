@@ -1,5 +1,13 @@
 import { createStore } from 'effector'
 
-import { IUserReview, userReviews } from './lib/mocha'
+import { SendingReviewModel } from 'features/sending-review'
+import { Types } from 'shared/lib'
 
-export const $userReviews = createStore<Array<IUserReview>>(userReviews)
+import { userReviews } from './lib/mocha'
+
+export const $userReviews = createStore<Array<Types.IUserReview>>(userReviews).on(
+	SendingReviewModel.sentReview,
+	(reviews, newPost) => [...reviews, newPost]
+)
+
+$userReviews.watch(el => console.log(el))

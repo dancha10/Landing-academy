@@ -20,7 +20,7 @@
     color: $grey;
   }
 
-  &--active {
+  &:focus {
     border: 1px solid $purple;
   }
 
