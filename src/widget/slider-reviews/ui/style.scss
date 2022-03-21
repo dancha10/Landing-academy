@@ -1,3 +1,5 @@
+@import "src/app/styles/variables";
+
 .slider-review {
   position: relative;
   width: 1198px;
@@ -15,30 +17,91 @@
 
   // .slider-review__list-reviews
   &__list-reviews {
-    display: flex;
     margin-top: 38px;
+    // transition: $transition;
+    // overflow: hidden;
+  }
+
+  &__review {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
   }
 
   // .slider-review__dots
   &__dots {
-    display: flex;
-    justify-content: center;
     margin-top: 28px;
 
-    & span {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+
+    & li {
+      list-style: none;
+      cursor: pointer;
+      display: inline-block;
+
       &:not(:last-child) {
         margin-right: 6px;
       }
+
+      & button {
+        transition: $transition;
+        border: none;
+        background: $purple;
+        color: transparent;
+        cursor: pointer;
+        display: block;
+        width: 16px;
+        height: 4px;
+        opacity: .3;
+      }
+    }
+
+    & li.slick-active button {
+      width: 32px;
+      background-color: $purple;
+      opacity: 1;
+    }
+
+    & li button:hover,
+    & li button:focus {
+      background-color: $purple;
+      opacity: 1;
     }
   }
 
   &__button-area {
     position: absolute;
     bottom: 0;
-    right: -90px;
+    right: -162px;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    & button {
+      &:first-child {
+        margin-right: 16px;
+      }
+    }
+
+  }
+}
+
+/* .slick-current {
+  margin: 0;
+  padding: 0;
+
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+} */
+
+.slick-list {
+  margin: 0 -12px;
+
+  & .slick-slide > div {
+    padding: 0 12px;
   }
 }

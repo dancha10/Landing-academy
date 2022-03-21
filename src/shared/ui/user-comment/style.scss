@@ -2,6 +2,7 @@
 
 .user-comment {
   width: 520px;
+  min-height: 279px;
   padding: 24px;
   background: $lightGrey;
   border-radius: 2px;
@@ -22,6 +23,7 @@
 
   // .user-comment__review
   &__review {
+    margin-top: 24px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.57em;

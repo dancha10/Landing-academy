@@ -20,12 +20,11 @@ const MainPage: FC = () => {
 				<div className='main-page__user-preview'>
 					<UserPreview />
 				</div>
-				<ReviewModel />
-				<div className='main-page__reviews'>
-					<SliderReviews />
-				</div>
 			</main>
-
+			<div className='main-page__reviews'>
+				<SliderReviews />
+			</div>
+			<ReviewModel />
 			<Footer />
 		</div>
 	)

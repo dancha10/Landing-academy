@@ -10,7 +10,7 @@
     &:hover {
       svg path {
         transition: $transition;
-        stroke: #FFFFFF;
+        stroke: $purple;
       }
     }
   }

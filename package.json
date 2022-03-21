@@ -14,12 +14,15 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.28.0",
-    "sass": "^1.49.9"
+    "react-slick": "^0.28.1",
+    "sass": "^1.49.9",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-namespace-from": "^7.16.7",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@types/react-slick": "^0.23.8",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "@vitejs/plugin-react": "^1.0.7",
