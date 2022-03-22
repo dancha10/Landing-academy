@@ -6,6 +6,7 @@ import { Header } from 'widget/header'
 import { UserPreview } from 'widget/user-preview'
 import { Footer } from 'widget/footer'
 import { SliderReviews } from 'widget/slider-reviews'
+import { NotificationWrapper } from 'entities/notification'
 import { MainPageGate } from 'shared/lib'
 
 import './style.scss'
@@ -25,6 +26,7 @@ const MainPage: FC = () => {
 				<SliderReviews />
 			</div>
 			<ReviewModel />
+			<NotificationWrapper />
 			<Footer />
 		</div>
 	)

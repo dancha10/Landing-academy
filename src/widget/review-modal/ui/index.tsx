@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { SendingReview, SendingReviewModel } from 'features/sending-review'
 import { UploadFile, UploadFileModel } from 'features/upload-file'
 import { ToggleModal, ToggleModel } from 'features/toggle-modal'
+import { useNotification } from 'entities/notification'
 import { Modal } from 'shared/ui/modal'
 import { Input } from 'shared/ui/input'
 import { Textarea } from 'shared/ui/textarea'
@@ -36,6 +37,8 @@ export const ReviewModel: FC = () => {
 		reset,
 	} = useForm<IReviewModalInputs>()
 
+	const notify = useNotification()
+
 	const onSubmit: SubmitHandler<IReviewModalInputs> = data => {
 		SendingReviewModel.sentReview({
 			avatar: uploadedImage,
@@ -44,6 +47,7 @@ export const ReviewModel: FC = () => {
 			dateOfPost: SendingReviewModel.localeDateString(),
 		})
 		ToggleModel.clickedButton()
+		notify('success')
 		reset()
 	}
 
