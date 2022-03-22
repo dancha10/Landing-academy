@@ -13,10 +13,19 @@ interface IUserCard {
 	sex: 'male' | 'female'
 	yearBirth: string
 	description: string
+	byTheWay: string
 	pets: boolean
 }
 
-export const UserCard: FC<IUserCard> = ({ fullName, city, sex, yearBirth, description, pets }) => {
+export const UserCard: FC<IUserCard> = ({
+	fullName,
+	city,
+	sex,
+	yearBirth,
+	byTheWay,
+	description,
+	pets,
+}) => {
 	return (
 		<div className='user-card'>
 			<div className='user-card__header'>
@@ -42,6 +51,7 @@ export const UserCard: FC<IUserCard> = ({ fullName, city, sex, yearBirth, descri
 				<span className='user-card__tag'>О себе:</span>
 				{description}
 			</p>
+			<div className='user-card__by-the-way'>BTW: {byTheWay}</div>
 			<div className='user-card__pet'>
 				<Pet />
 				<span className='user-card__tag'>Домашнее животное:</span>

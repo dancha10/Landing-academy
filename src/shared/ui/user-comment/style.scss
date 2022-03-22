@@ -23,6 +23,8 @@
 
   // .user-comment__review
   &__review {
+    max-width: 471px;
+    word-break: break-word;
     margin-top: 24px;
     font-weight: 400;
     font-size: 14px;

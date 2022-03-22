@@ -10,3 +10,10 @@ export interface IUserReview {
 	review: string
 	avatar?: string
 }
+
+export interface IInput {
+	placeholder: string
+	disabled?: boolean
+	validator?: Object
+	isError: boolean
+}

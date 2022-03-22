@@ -38,6 +38,7 @@
     }
   }
 
+
   &__counter {
     position: absolute;
     right: 4px;
@@ -46,5 +47,11 @@
     font-size: 10px;
     line-height: 14px;
     color: $grey;
+  }
+
+  &--error {
+    & textarea {
+      border: 1px solid $red;
+    }
   }
 }

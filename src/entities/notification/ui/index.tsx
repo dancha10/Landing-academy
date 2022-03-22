@@ -10,23 +10,15 @@ import { ReactComponent as Close } from '../lib/close.svg'
 import {
 	$isActiveNotification,
 	$typeNotify,
+	INotification,
 	notificationClosed,
-	resetTypeNotify,
 	setTypeNotify,
 } from '../model'
 
 import './style.scss'
 
-export interface INotification {
-	type: 'success' | 'error'
-}
-
 export const useNotification = () => {
-	return useCallback((type: 'success' | 'error') => {
-		console.log('Callback')
-
-		setTypeNotify(type)
-	}, [])
+	return useCallback((type: INotification['type']) => setTypeNotify(type), [])
 }
 
 export const NotificationWrapper: FC = () => {
@@ -91,12 +83,7 @@ export const Notification: FC<INotification> = ({ type }) => {
 				</p>
 			</div>
 			<div className='notification__close'>
-				<button
-					onClick={() => {
-						notificationClosed(true)
-						setTimeout(() => resetTypeNotify(), 1000)
-					}}
-				>
+				<button onClick={() => notificationClosed(true)}>
 					<Close />
 				</button>
 			</div>

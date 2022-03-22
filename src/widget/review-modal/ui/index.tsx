@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import { useStore } from 'effector-react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
@@ -48,7 +48,17 @@ export const ReviewModel: FC = () => {
 		})
 		ToggleModel.clickedButton()
 		notify('success')
+		deleteFile()
 		reset()
+	}
+
+	const fileRef = useRef<HTMLInputElement>(null)
+
+	const deleteFile = (): void => {
+		UploadFileModel.resetStores()
+		if (fileRef.current?.value) {
+			fileRef.current.value = ''
+		}
 	}
 
 	return (
@@ -64,8 +74,9 @@ export const ReviewModel: FC = () => {
 						<Input
 							placeholder='Имя Фамилия'
 							validator={{ ...register('fullName', fullNameValidator) }}
+							isError={!!errors.fullName}
 						/>
-						<UploadFile />
+						<UploadFile fileRef={fileRef} />
 						{errors.fullName && (
 							<div className='review-model__error-message'>
 								<Cross width={10} height={10} />
@@ -80,10 +91,7 @@ export const ReviewModel: FC = () => {
 								percent={percentLoading}
 								error={errorMessage}
 								action={
-									<button
-										className='review-model__delete'
-										onClick={() => UploadFileModel.resetStores()}
-									>
+									<button className='review-model__delete' onClick={deleteFile}>
 										<Delete />
 									</button>
 								}
@@ -97,6 +105,7 @@ export const ReviewModel: FC = () => {
 							placeholder='Напишите пару слов о вашем опыте...'
 							maxLength={200}
 							validator={{ ...register('detailedReview', detailedReviewValidator) }}
+							isError={!!errors.detailedReview}
 						/>
 						{errors.detailedReview && (
 							<div className='review-model__error-message'>

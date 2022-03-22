@@ -1,6 +1,7 @@
 import { Types } from 'shared/lib'
 
 import buba from './buba.jpg'
+import Jinx from './jinx.jpg'
 
 export const userReviews: Array<Types.IUserReview> = [
 	{
@@ -20,8 +21,15 @@ export const userReviews: Array<Types.IUserReview> = [
 		avatar:
 			'https://sun9-43.userapi.com/impf/T0napMGt-siBScXsMCAlIhEFrzaGbyLzb0HAUg/sU24RSXjIks.jpg?size=658x658&quality=95&sign=53a9ed35e14fed312ecb3e4bbae34cc9&type=album',
 		fullName: 'Брах Брахич',
-		dateOfPost: '08.01.2022',
+		dateOfPost: '20.03.2022',
 		review:
 			'Поцан к успеху шел - не фортануло. Решил попробовать снова, посмотрим что получится. Надеюсь все будет крутяк !!!',
+	},
+	{
+		avatar: Jinx,
+		fullName: 'Джинкс Ваевна',
+		dateOfPost: '22.03.2022',
+		review:
+			'Щас вернусь. Никому не умирать, пока я не разрешу! Мне так хочется тут все взоРРРРВать бубух фуфу бух',
 	},
 ]

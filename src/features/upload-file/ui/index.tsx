@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC, RefObject } from 'react'
 
 import { Button } from 'shared/ui/buttons'
 
@@ -6,8 +6,11 @@ import { imageReader, resetStores } from '../model'
 
 import './style.scss'
 
-export const UploadFile: FC = () => {
-	const fileRef = useRef<HTMLInputElement>(null)
+interface IUploadFile {
+	fileRef: RefObject<HTMLInputElement>
+}
+
+export const UploadFile: FC<IUploadFile> = ({ fileRef }) => {
 	const clickButton = () => {
 		fileRef?.current?.click()
 		resetStores()
