@@ -9,6 +9,11 @@
   justify-content: space-between;
   border-radius: 32px;
 
+  @media (max-width: $md3) {
+    width: 288px;
+    height: 132px;
+  }
+
   // .'notification--error'
   &--error {
     background: #F64B3C;
@@ -118,6 +123,11 @@
     flex-direction: column;
     justify-content: center;
 
+    @media (max-width: $md3) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
     & p {
 
     }
@@ -149,6 +159,11 @@
   bottom: 10%;
   width: 500px;
   z-index: 999;
+
+  @media (max-width: $md3) {
+    right: -5%;
+    bottom: 2%;
+  }
 
 
   &__item {

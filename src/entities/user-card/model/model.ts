@@ -1,4 +1,4 @@
-export const getCurrentAge = (dateOfBirth: string) => {
+export const getCurrentAge = (dateOfBirth: string): number => {
 	const fragmentationDate = dateOfBirth.split('.')
 	const day = +fragmentationDate[0]
 	const month = +fragmentationDate[1]

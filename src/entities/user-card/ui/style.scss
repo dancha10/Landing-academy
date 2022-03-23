@@ -7,16 +7,31 @@
   border-radius: 2px;
   padding: 40px;
 
+  @media (max-width: $md3) {
+    padding: 16px;
+    margin-top: -16px;
+  }
+
   // .user-card__header
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: $md3) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   // .user-card__fullName
   &__fullName {
     color: $purple;
+
+    @media (max-width: $md3) {
+      font-size: 24px;
+      line-height: 1.33em;
+    }
   }
 
   // .user-card__year-birth
@@ -25,6 +40,12 @@
     line-height: 1.3em;
     font-weight: 400;
     color: $grey;
+
+    @media (max-width: $md3) {
+      font-size: 16px;
+      line-height: 1.375em;
+      letter-spacing: 0.01em;
+    }
   }
 
   // .user-card__info
@@ -32,6 +53,11 @@
     margin-top: 24px;
     display: flex;
     align-items: center;
+
+    @media (max-width: $md3) {
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
 
     & li {
       display: flex;
@@ -41,12 +67,39 @@
       font-size: 18px;
       line-height: 1.3em;
 
+      @media (max-width: $md3) {
+        font-size: 16px;
+        line-height: 1.375em;
+        letter-spacing: 0.01em;
+      }
+
       & svg {
         margin-left: 12px;
+        @media (max-width: $md5) {
+          margin-left: 8px;
+        }
       }
 
       &:not(:first-child) {
         margin-left: 40px;
+
+        @media (max-width: $md5) {
+          margin-left: 28px;
+        }
+
+        @media (max-width: 400px) {
+          margin-right: 10px;
+          &:last-child {
+            margin-top: 2px;
+            margin-left: 0;
+          }
+        }
+
+        @media (max-width: 300px) {
+            &:nth-child(2) {
+              margin-left: 9px;
+            }
+        }
       }
     }
   }
@@ -55,6 +108,12 @@
   &__tag {
     font-weight: 700;
     margin-right: 5px;
+
+    @media (max-width: $md3) {
+      font-size: 16px;
+      line-height: 1.375em;
+      letter-spacing: 0.01em;
+    }
   }
 
   // .user-card__by-the-way
@@ -63,6 +122,13 @@
     font-style: italic;
     font-size: 18px;
     line-height: 1.3em;
+
+    @media (max-width: $md3) {
+      margin-top: 25px;
+      font-size: 16px;
+      line-height: 1.375em;
+      letter-spacing: 0.01em;
+    }
   }
 
   // .user-card__description
@@ -71,6 +137,13 @@
     font-size: 18px;
     line-height: 1.3em;
     margin-top: 18px;
+
+    @media (max-width: $md3) {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.375em;
+      letter-spacing: 0.01em;
+    }
   }
 
   // .user-card__pet
@@ -84,6 +157,18 @@
 
     & svg {
       margin-right: 12px;
+      @media (max-width: $md3) {
+        margin-right: 8px;
+        width: 24px;
+        height: 16px;
+      }
+    }
+
+    @media (max-width: $md3) {
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.01em;
     }
   }
 }

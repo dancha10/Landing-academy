@@ -19,6 +19,10 @@
   &--active {
     opacity: 1;
     pointer-events: all;
+    
+    @media (max-width: $md3) {
+        padding: 0 15px;
+    }
   }
 
   &__container {
@@ -28,6 +32,10 @@
     transform: scale(.7);
     opacity: .7;
     transition: $transition;
+
+    @media (max-width: $md3) {
+        padding: 16px;
+    }
 
     &--active {
       transform: scale(1);

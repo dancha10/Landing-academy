@@ -3,7 +3,7 @@ import { createGate } from 'effector-react'
 
 export const MainPageGate = createGate()
 
-export const $isMobileWidth = createStore(false)
+export const $isMobileWidth = createStore(document.body.offsetWidth < 768)
 
 const resized = createEvent()
 

@@ -6,6 +6,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: $md3) {
+      h4 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.0124em;
+      }
+    }
   }
 
   // .review-model__form
@@ -21,6 +30,10 @@
     font-size: 16px;
     line-height: 1.25em;
     color: $dark;
+
+    @media (max-width: $md3) {
+      margin-bottom: 8px;
+    }
   }
 
   // .review-model__form-field
@@ -31,6 +44,35 @@
     & input {
       width: 395px;
       margin-right: 16px;
+    }
+
+    @media (max-width: $md3) {
+      flex-direction: column;
+
+
+      & input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+
+      & button {
+        width: 149px;
+        height: 42px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+
+        &:after {
+          height: 42px;
+        }
+
+        & svg {
+          width: 10px;
+          height: 10px;
+          margin-right: 11px;
+        }
+      }
     }
   }
 
@@ -61,6 +103,9 @@
 
   &__file-preview {
     margin-top: 18px;
+    @media (max-width: $md3) {
+      margin-top: 16px;
+    }
   }
 
   &__delete {
@@ -80,6 +125,10 @@
     position: relative;
     margin-top: 32px;
 
+    @media (max-width: $md3) {
+      margin-top: 24px;
+    }
+
     & textarea {
       min-height: 105px;
     }
@@ -90,8 +139,21 @@
     margin-top: 40px;
     display: flex;
 
+    @media (max-width: $md3) {
+      margin-top: 32px;
+      flex-direction: column;
+    }
+
     & button {
       margin-right: 19px;
+
+      @media (max-width: $md3) {
+        order: 2;
+        display: inline-block;
+        align-items: center;
+        padding: 12px 20px;
+        width: 100%;
+      }
     }
   }
 
@@ -106,6 +168,12 @@
       font-size: 12px;
       line-height: 16px;
       color: $grey;
+    }
+
+    @media (max-width: $md3) {
+      justify-content: center;
+      order: 1;
+      margin-bottom: 12px;
     }
   }
 

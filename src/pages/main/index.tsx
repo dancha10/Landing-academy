@@ -3,10 +3,11 @@ import { useGate } from 'effector-react'
 
 import { ReviewModel } from 'widget/review-modal'
 import { Header } from 'widget/header'
-import { UserPreview } from 'widget/user-preview'
 import { Footer } from 'widget/footer'
 import { SliderReviews } from 'widget/slider-reviews'
 import { NotificationWrapper } from 'entities/notification'
+import { Avatar } from 'shared/ui/avatar'
+import { UserCard } from 'entities/user-card'
 import { MainPageGate } from 'shared/lib'
 
 import './style.scss'
@@ -19,7 +20,20 @@ const MainPage: FC = () => {
 			<main className='main-page__container container'>
 				<h1 className='main-page__welcome'>Добро пожаловать в академию!</h1>
 				<div className='main-page__user-preview'>
-					<UserPreview />
+					<Avatar image='https://sun9-36.userapi.com/impf/c849332/v849332182/d8a7e/SzEtiqLuErs.jpg?size=960x1280&quality=96&sign=4ae6bc474b03e1683da4b35cf31ac851&type=album' />
+					<div className='preview__card'>
+						<UserCard
+							fullName='Даниил Абраменко'
+							yearBirth='10.08.2001'
+							city='Томск'
+							sex='male'
+							byTheWay='И да, у меня тоже есть кошка :)'
+							pets
+							description={
+								"Всем привет! Меня зовут Даниил, мне 20 лет, я студент. Учусь на программиста, в таком ВУЗе, как ТУСУР. Живу пока что в крутой общаге. Как и многие другие хочу стать сеньером-помидором frontend developer'om."
+							}
+						/>
+					</div>
 				</div>
 			</main>
 			<div className='main-page__reviews'>
