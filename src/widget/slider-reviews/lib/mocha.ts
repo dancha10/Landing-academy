@@ -19,7 +19,7 @@ export const userReviews: Array<Types.IUserReview> = [
 	},
 	{
 		avatar:
-			'https://sun9-43.userapi.com/impf/T0napMGt-siBScXsMCAlIhEFrzaGbyLzb0HAUg/sU24RSXjIks.jpg?size=658x658&quality=95&sign=53a9ed35e14fed312ecb3e4bbae34cc9&type=album',
+			'https://sun9-83.userapi.com/impf/gonC36bbXRsqLe4pD7G6cUy2SlEhAn2HUe5YRA/IRJFOQNDwjU.jpg?size=1620x2160&quality=96&sign=f4576b7a1b58c2980239d42e04240900&type=album',
 		fullName: 'Брах Брахич',
 		dateOfPost: '20.03.2022',
 		review:
