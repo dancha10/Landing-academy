@@ -14,4 +14,8 @@ export default defineConfig({
 		}),
 		tsconfigPaths(),
 	],
+	base: '',
+	build: {
+		outDir: 'build',
+	},
 })
